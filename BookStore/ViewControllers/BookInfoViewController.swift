@@ -8,6 +8,7 @@
 
 import UIKit
 import BookStoreKit
+import ContentsquareModule
 
 final class BookInfoViewController: UIViewController {
     static func instantiate(isbn13: String, bookStore: BookStoreService) -> BookInfoViewController {
@@ -21,7 +22,7 @@ final class BookInfoViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        Contentsquare.send(screenViewWithName: "Book Info")
         setupViews()
         refreshInfo()
     }

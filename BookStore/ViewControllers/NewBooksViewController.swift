@@ -8,13 +8,14 @@
 
 import UIKit
 import BookStoreKit
+import ContentsquareModule
 
 final class NewBooksViewController: UIViewController {
     private(set) var books = [Book]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        Contentsquare.send(screenViewWithName: "New Books")
         setupTableView()
         reload()
     }

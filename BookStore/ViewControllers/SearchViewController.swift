@@ -8,13 +8,14 @@
 
 import UIKit
 import BookStoreKit
+import ContentsquareModule
 
 final class SearchViewController: UIViewController {
     private(set) var books = [Book]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        Contentsquare.send(screenViewWithName: "Search View")
         books = []
         searchEngine.delegate = self
         setupViews()
