@@ -7,4 +7,5 @@ target 'BookStore' do
 
   # Pods for BookStore
   pod 'CS_iOS_SDK', '4.1.0'
+  pod 'Adyen'
 end

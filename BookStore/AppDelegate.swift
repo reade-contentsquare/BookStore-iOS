@@ -9,6 +9,7 @@
 import UIKit
 import BookStoreKit
 import ContentsquareModule
+import Adyen
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,7 +17,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        Contentsquare.logLevel = Log.Level.verbose;
+        #if DEBUG
+            Contentsquare.logLevel = Log.Level.verbose;
+            AdyenLogging.isEnabled = true
+        #endif
         
         if ProcessInfo.processInfo.arguments.contains("-uitesting") {
             BookStoreConfiguration.shared.setBaseURL(URL(string: "http://localhost:8080")!)
